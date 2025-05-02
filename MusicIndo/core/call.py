@@ -24,7 +24,6 @@ from pytgcalls import PyTgCalls, filters
 from pytgcalls.exceptions import *
 from pytgcalls.types import *
 from pytgcalls.types.stream import *
-from pytgcalls.types.update import UpdatedGroupCallParticipant
 
 import config
 from strings import get_string
@@ -675,7 +674,7 @@ class Call(PyTgCalls):
         @self.four.on_update(filters.call_participant(GroupCallParticipant.Action.UPDATED))
         @self.five.on_update(filters.call_participant(GroupCallParticipant.Action.UPDATED))
         async def participants_change_handler(client, update: Update):
-            if not isinstance(update, UpdatedGroupCallParticipant) and not isinstance(
+            if not isinstance(update, JoinedGroupCallParticipant) and not isinstance(
                 update, LeftGroupCallParticipant
             ):
                 return
