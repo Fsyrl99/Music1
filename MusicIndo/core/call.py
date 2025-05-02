@@ -24,8 +24,6 @@ from pytgcalls import PyTgCalls, filters
 from pytgcalls.exceptions import *
 from pytgcalls.types import *
 from pytgcalls.types.stream import *
-from pytgcalls.types.joined import JoinedGroupCallParticipant
-from pytgcalls.types.left import LeftGroupCallParticipant
 
 import config
 from strings import get_string
